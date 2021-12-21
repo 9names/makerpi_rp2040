@@ -71,7 +71,7 @@ fn main() -> ! {
         &mut pac.RESETS,
     );
 
-    let _led: Pin<_, FunctionPio0> = pins.smartleds.into_mode();
+    let smartleds_pin: Pin<_, FunctionPio0> = pins.smartleds.into_mode();
 
     let timer = Timer::new(pac.TIMER, &mut pac.RESETS);
     let mut delay = timer.count_down();
@@ -79,7 +79,7 @@ fn main() -> ! {
     // Configure the addressable LED
     let (mut pio, sm0, _, _, _) = pac.PIO0.split(&mut pac.RESETS);
     let mut ws = Ws2812::new(
-        18,
+        smartleds_pin,
         &mut pio,
         sm0,
         clocks.peripheral_clock.freq(),
