@@ -23,7 +23,7 @@ use hal::gpio::DynPin;
 use panic_halt as _;
 
 // Make an alias for our board support package so copying examples to other boards is easier
-use makerpi_rp2040 as bsp;
+use cytron_maker_pi_rp2040 as bsp;
 
 // Pull in any important traits
 use bsp::hal::prelude::*;
@@ -62,7 +62,7 @@ fn main() -> ! {
     //
     // The default is to generate a 125 MHz system clock
     let clocks = hal::clocks::init_clocks_and_plls(
-        makerpi_rp2040::XOSC_CRYSTAL_FREQ,
+        bsp::XOSC_CRYSTAL_FREQ,
         pac.XOSC,
         pac.CLOCKS,
         pac.PLL_SYS,

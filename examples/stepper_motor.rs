@@ -27,16 +27,19 @@ use embedded_time::rate::*;
 // be linked)
 use panic_halt as _;
 
+// Make an alias for our board support package so copying examples to other boards is easier
+use cytron_maker_pi_rp2040 as bsp;
+
 // Pull in any important traits
-use makerpi_rp2040::hal::prelude::*;
+use bsp::hal::prelude::*;
 
 // A shorter alias for the Peripheral Access Crate, which provides low-level
 // register access
-use makerpi_rp2040::hal::pac;
+use bsp::hal::pac;
 
 // A shorter alias for the Hardware Abstraction Layer, which provides
 // higher-level drivers.
-use makerpi_rp2040::hal;
+use bsp::hal;
 
 //// The linker will place this boot block at the start of our program image. We
 //// need this to help the ROM bootloader get our code up and running.
@@ -64,7 +67,7 @@ fn main() -> ! {
     //
     // The default is to generate a 125 MHz system clock
     let clocks = hal::clocks::init_clocks_and_plls(
-        makerpi_rp2040::XOSC_CRYSTAL_FREQ,
+        bsp::XOSC_CRYSTAL_FREQ,
         pac.XOSC,
         pac.CLOCKS,
         pac.PLL_SYS,
@@ -83,7 +86,7 @@ fn main() -> ! {
     let sio = hal::sio::Sio::new(pac.SIO);
 
     // Set the pins up according to their function on this particular board
-    let pins = makerpi_rp2040::Pins::new(
+    let pins = bsp::Pins::new(
         pac.IO_BANK0,
         pac.PADS_BANK0,
         sio.gpio_bank0,

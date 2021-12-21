@@ -14,7 +14,7 @@ use embedded_time::duration::Extensions;
 use panic_halt as _;
 
 // Make an alias for our board support package so copying examples to other boards is easier
-use makerpi_rp2040 as bsp;
+use cytron_maker_pi_rp2040 as bsp;
 
 use bsp::{
     hal::{
@@ -25,7 +25,6 @@ use bsp::{
         timer::Timer,
         watchdog::Watchdog,
     },
-    XOSC_CRYSTAL_FREQ,
 };
 use rp2040_hal::pio::PIOExt;
 use smart_leds::{brightness, SmartLedsWrite, RGB8};
@@ -52,7 +51,7 @@ fn main() -> ! {
     let mut watchdog = Watchdog::new(pac.WATCHDOG);
 
     let clocks = init_clocks_and_plls(
-        XOSC_CRYSTAL_FREQ,
+        bsp::XOSC_CRYSTAL_FREQ,
         pac.XOSC,
         pac.CLOCKS,
         pac.PLL_SYS,
