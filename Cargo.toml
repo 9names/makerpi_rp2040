@@ -1,5 +1,5 @@
 [package]
-name = "makerpi_rp2040"
+name = "cytron_maker_pi_rp2040"
 version = "0.1.0"
 authors = ["9names"]
 edition = "2018"
