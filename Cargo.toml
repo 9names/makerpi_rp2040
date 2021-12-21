@@ -24,7 +24,7 @@ embedded-hal ="0.2.5"
 rp2040-boot2 = "0.2.0"
 smart-leds = "0.3.0"
 pio = "0.1.0"
-ws2812-pio = { git = "https://github.com/ithinuel/ws2812-pio-rs", rev = "4f0d81e594ea9934f9c4c38ed9824ad0cce4ebb5" }
+ws2812-pio = { git = "https://github.com/9names/ws2812-pio-rs", rev = "163977f969c7ea25b32c56cdc697ca0023c38484" }
 nb = "1.0"
 
 [features]
