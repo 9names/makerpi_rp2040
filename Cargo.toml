@@ -11,6 +11,7 @@ license = "Apache-2.0 OR MIT"
 
 [dependencies]
 cortex-m = "0.7.2"
+rp2040-boot2 = { version = "0.2.0", optional = true }
 rp2040-hal = "0.3.0"
 cortex-m-rt = { version = "0.7", optional = true }
 embedded-time = "0.12.0"
@@ -21,12 +22,12 @@ usbd-hid = "0.5.1"
 [dev-dependencies]
 panic-halt= "0.2.0"
 embedded-hal ="0.2.5"
-rp2040-boot2 = "0.2.0"
 smart-leds = "0.3.0"
 pio = "0.1.0"
 ws2812-pio = { git = "https://github.com/9names/ws2812-pio-rs", rev = "163977f969c7ea25b32c56cdc697ca0023c38484" }
 nb = "1.0"
 
 [features]
-default = ["rt"]
+default = ["boot2", "rt"]
+boot2 = ["rp2040-boot2"]
 rt = ["cortex-m-rt","rp2040-hal/rt"]
