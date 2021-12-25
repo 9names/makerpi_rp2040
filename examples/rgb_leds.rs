@@ -16,15 +16,13 @@ use panic_halt as _;
 // Make an alias for our board support package so copying examples to other boards is easier
 use cytron_maker_pi_rp2040 as bsp;
 
-use bsp::{
-    hal::{
-        clocks::{init_clocks_and_plls, Clock},
-        gpio::{FunctionPio0, Pin},
-        pac,
-        sio::Sio,
-        timer::Timer,
-        watchdog::Watchdog,
-    },
+use bsp::hal::{
+    clocks::{init_clocks_and_plls, Clock},
+    gpio::{FunctionPio0, Pin},
+    pac,
+    sio::Sio,
+    timer::Timer,
+    watchdog::Watchdog,
 };
 use rp2040_hal::pio::PIOExt;
 use smart_leds::{brightness, SmartLedsWrite, RGB8};
