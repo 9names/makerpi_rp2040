@@ -24,10 +24,10 @@ RP2040 chip according to how it is connected up on the Maker Pi RP2040.
 To use this crate, your `Cargo.toml` file should contain:
 
 ```toml
-makerpi_rp2040 = { git = "http://github.com/9names/makerpi_rp2040.git" }
+cytron_maker_pi_rp2040 = "0.1.0"
 ```
 
-In your program, you will need to call `makerpi_rp2040::Pins::new` to create
+In your program, you will need to call `cytron_maker_pi_rp2040::Pins::new` to create
 a new `Pins` structure. This will set up all the GPIOs for any on-board
 devices. See the [examples](./examples) folder for more details.
 
