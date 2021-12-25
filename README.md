@@ -38,7 +38,7 @@ devices. See the [examples](./examples) folder for more details.
 To compile an example, clone this repository and run:
 
 ```console
-makepi_rp2040 $ cargo build --release --example <name>
+makerpi_rp2040 $ cargo build --release --example <name>
 ```
 
 You will get an ELF file called
@@ -52,7 +52,7 @@ USB drive exported by the RP2040 bootloader, simply boot your board into
 bootloader mode and run:
 
 ```console
-rp-hal/boards/pico $ cargo run --release --example <name>
+makerpi_rp2040 $ cargo run --release --example <name>
 ```
 
 If you get an error about not being able to find `elf2uf2-rs`, try:
@@ -65,6 +65,7 @@ then try repeating the `cargo run` command above.
 ### [cycle_leds](./examples/cycle_leds.rs)
 
 Flashes a sequences across the Digital IO Status LEDs
+![cycle_leds_short](https://user-images.githubusercontent.com/60134748/147382950-5b604745-e228-4547-98fd-60a724a2722e.gif)
 
 ### [pwm_buzzer](./examples/pwm_buzzer.rs)
 
@@ -75,11 +76,13 @@ Plays a sweeping frequency pitch through the on-board buzzer
 Rotates a stepper motor through 360 degrees clockwise then anticlockwise.
 Note that this requires a specific stepper motor from 
 [Seeedstudio](https://www.seeedstudio.com/Small-Size-and-High-Torque-Stepper-Motor-24BYJ48-p-1922.html)
+![stepper_motor](https://user-images.githubusercontent.com/60134748/147382999-05e75b5f-d0d5-441a-ab51-25bb6e41589e.gif)
 
 ### [rgb_leds](./examples/rgb_leds.rs)
 
 Cycle through colors on the pair of onboard RGB LEDs
-
+![rgb_leds](https://user-images.githubusercontent.com/60134748/147383061-d26a1684-b45e-4e1a-b32d-eb3591e6b085.gif)
 
 
 `SPDX-License-Identifier: Apache-2.0 OR MIT`
+
