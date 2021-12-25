@@ -8,7 +8,8 @@ RP2040 chip according to how it is connected up on the Maker Pi RP2040.
 
 ## Cytron Maker Pi RP2040
 
-Maker Pi RP2040 is an embedded robot control board by Cytron.  You can find more info about it on the [Maker Pi RP2040 product page](https://www.cytron.io/p-maker-pi-rp2040)
+Maker Pi RP2040 is an embedded robot control board by Cytron.  
+You can find more info about it on the [Maker Pi RP2040 product page](https://www.cytron.io/p-maker-pi-rp2040)
 
 ## Using
 
@@ -32,7 +33,7 @@ makerpi_rp2040 $ cargo build --release --example <name>
 
 You will get an ELF file called
 `./target/thumbv6m-none-eabi/release/examples/<name>`, where the `target`
-folder is located at the top of the _rp-hal_ repository checkout. Normally
+folder is located at the top of the repository checkout. Normally
 you would also need to specify `--target=thumbv6m-none-eabi` but when
 building examples from this git repository, that is set as the default.
 
@@ -56,7 +57,7 @@ then try repeating the `cargo run` command above.
 
 ### [cycle_leds](./examples/cycle_leds.rs)
 
-Flashes a sequences across the Digital IO Status LEDs  
+Flashes a sequence across the Digital IO Status LEDs  
 ![cycle_leds_short](https://user-images.githubusercontent.com/60134748/147382950-5b604745-e228-4547-98fd-60a724a2722e.gif)
 
 ### [stepper_motor](./examples/stepper_motor.rs)
@@ -82,16 +83,7 @@ Note: the example uses a short pulse length to keep the volume down - see docume
 - [Product page for Raspberry Silicon RP2040](https://www.raspberrypi.org/products/rp2040/)
 - [rp2040-hal](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal)
 - [CircuitPython port](https://circuitpython.org/board/cytron_maker_pi_rp2040/)
-
-
-[Maker Pi RP2040 micropython port](https://github.com/CytronTechnologies/MAKER-PI-RP2040)
-
-## Reference:
-
-- [Maker Pi RP2040 Datasheet](https://docs.google.com/document/d/1DJASwxgbattM37V4AIlJVR4pxukq0up25LppA8-z_AY/edit?usp=sharing)
-- [RP2040 Datasheet](https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf)
-- [rp2040-hal](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal)
-- [Download CircuitPython for Maker Pi RP2040](https://circuitpython.org/board/cytron_maker_pi_rp2040/)
+- [Maker Pi RP2040 micropython port](https://github.com/CytronTechnologies/MAKER-PI-RP2040)
 
 `SPDX-License-Identifier: Apache-2.0 OR MIT`
 
