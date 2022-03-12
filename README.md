@@ -3,8 +3,11 @@
 You should include this crate if you are writing code that you want to run on
 a `Cytron Maker Pi RP2040`.
 
-This crate includes the [rp2040-hal](https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal), but also configures each pin of the
+This crate includes the [rp2040-hal], but also configures each pin of the
 RP2040 chip according to how it is connected up on the Maker Pi RP2040.
+
+[Cytron Maker Pi RP2040]: https://www.cytron.io/p-maker-pi-rp2040
+[rp2040-hal]: https://github.com/rp-rs/rp-hal/tree/main/rp2040-hal
 
 ## Cytron Maker Pi RP2040
 
