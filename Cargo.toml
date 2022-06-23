@@ -1,8 +1,8 @@
 [package]
 name = "cytron_maker_pi_rp2040"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["9names"]
-edition = "2018"
+edition = "2021"
 homepage = "https://github.com/9names/makerpi_rp2040"
 repository = "https://github.com/9names/makerpi_rp2040"
 description = "Board Support Package for the Cytron Maker Pi RP2040"
@@ -13,18 +13,18 @@ license = "Apache-2.0 OR MIT"
 [dependencies]
 cortex-m = "0.7.2"
 rp2040-boot2 = { version = "0.2.0", optional = true }
-rp2040-hal = "0.4.0"
+rp2040-hal = "0.5.0"
 cortex-m-rt = { version = "0.7", optional = true }
 embedded-time = "0.12.0"
 usb-device= "0.2.8"
 usbd-serial = "0.1.1"
-usbd-hid = "0.5.1"
+usbd-hid = "0.6.0"
 
 [dev-dependencies]
 panic-halt= "0.2.0"
 embedded-hal ="0.2.5"
 smart-leds = "0.3.0"
-ws2812-pio = { git = "https://github.com/ithinuel/ws2812-pio-rs", rev = "fd6b6604d65a66242b52ccf7f24a95ca325991dd" }
+ws2812-pio = "0.3.0"
 nb = "1.0"
 
 [features]
