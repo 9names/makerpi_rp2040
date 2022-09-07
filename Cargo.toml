@@ -15,9 +15,6 @@ cortex-m = "0.7.2"
 rp2040-boot2 = { version = "0.2.0", optional = true }
 rp2040-hal = "0.6.0"
 cortex-m-rt = { version = "0.7", optional = true }
-usb-device= "0.2.8"
-usbd-serial = "0.1.1"
-usbd-hid = "0.6.0"
 
 [dev-dependencies]
 panic-halt= "0.2.0"
