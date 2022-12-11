@@ -19,7 +19,7 @@ You can find more info about it on the [Maker Pi RP2040 product page](https://ww
 To use this crate, your `Cargo.toml` file should contain:
 
 ```toml
-cytron_maker_pi_rp2040 = "0.4.0"
+cytron_maker_pi_rp2040 = "0.5"
 ```
 
 In your program, you will need to call `cytron_maker_pi_rp2040::Pins::new` to create
