@@ -63,9 +63,9 @@ fn main() -> ! {
         &mut pac.RESETS,
     );
 
-    let smartleds_pin: Pin<_, FunctionPio0> = pins.smartleds.into_mode();
+    let smartleds_pin: Pin<_, FunctionPio0, _> = pins.smartleds.into_function();
 
-    let timer = Timer::new(pac.TIMER, &mut pac.RESETS);
+    let timer = Timer::new(pac.TIMER, &mut pac.RESETS, &clocks);
     let mut delay = timer.count_down();
 
     // Configure the addressable LED

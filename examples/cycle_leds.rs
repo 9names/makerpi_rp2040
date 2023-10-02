@@ -14,7 +14,7 @@ use cortex_m_rt::entry;
 // GPIO traits
 use embedded_hal::digital::v2::OutputPin;
 
-use hal::gpio::DynPin;
+use hal::gpio::{DynPinId, FunctionSioOutput, Pin, PullDown};
 // Ensure we halt the program on panic (if we don't mention this crate it won't
 // be linked)
 use panic_halt as _;
@@ -80,21 +80,23 @@ fn main() -> ! {
     );
 
     // We gave the pins on this board nice names, but we're just using them for their LEDs
-    // To put them in an array we have to convert them to DynPins. Let's do that now...
-    let mut pinarray: [DynPin; 13] = [
-        pins.grove_1_a.into_push_pull_output().into(),
-        pins.grove_1_b.into_push_pull_output().into(),
-        pins.grove_2_a.into_push_pull_output().into(),
-        pins.grove_2_b.into_push_pull_output().into(),
-        pins.grove_3_a.into_push_pull_output().into(),
-        pins.grove_3_b.into_push_pull_output().into(),
-        pins.grove_5_a.into_push_pull_output().into(),
-        pins.grove_7_a.into_push_pull_output().into(),
-        pins.grove_4_a.into_push_pull_output().into(),
-        pins.grove_4_b.into_push_pull_output().into(),
-        pins.grove_5_b.into_push_pull_output().into(),
-        pins.grove_6_b.into_push_pull_output().into(),
-        pins.grove_7_b.into_push_pull_output().into(),
+    // To put them in an array we have to convert them to Dynamically Typed pins.
+    // This means they'll carry their pin numbers around with them at run time, rather than
+    // relying on the Type of the pin to know that.
+    let mut pinarray: [Pin<DynPinId, FunctionSioOutput, PullDown>; 13] = [
+        pins.grove_1_a.reconfigure().into_dyn_pin(),
+        pins.grove_1_b.reconfigure().into_dyn_pin(),
+        pins.grove_2_a.reconfigure().into_dyn_pin(),
+        pins.grove_2_b.reconfigure().into_dyn_pin(),
+        pins.grove_3_a.reconfigure().into_dyn_pin(),
+        pins.grove_3_b.reconfigure().into_dyn_pin(),
+        pins.grove_5_a.reconfigure().into_dyn_pin(),
+        pins.grove_7_a.reconfigure().into_dyn_pin(),
+        pins.grove_4_a.reconfigure().into_dyn_pin(),
+        pins.grove_4_b.reconfigure().into_dyn_pin(),
+        pins.grove_5_b.reconfigure().into_dyn_pin(),
+        pins.grove_6_b.reconfigure().into_dyn_pin(),
+        pins.grove_7_b.reconfigure().into_dyn_pin(),
     ];
 
     // Light one LED at a time. Start at GP0 and go through to GP28, then reverse.
